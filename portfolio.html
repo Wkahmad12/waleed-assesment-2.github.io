@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="pp.js"></script>
+    <link rel="stylesheet" href="pp.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORT<span>FOLIO</span></a>
+        
+        <nav class="navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="services.html">SERVICES</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="skill.html">SKILLS</a>
+            <a href="contact.html">CONTACT</a>
+            
+        </nav>
+    </header>
+    <section class="PORTFOLIO" id="PORTFOLIO">
+        <h2 class="headingg">Latest<span> Project</span></h2>
+        <div class="portfolio-tet">
+            <div class="portfolio-box">
+            
+               
+            
+            <div class="portfolio-layer">
+                <h3>Web <span>development</span></h3>
+                <p class="p4">I am proud to have recently completed a web development project that showcases my skills and expertise in this field. The project involved developing a dynamic and interactive website for a client that aimed to improve their online presence and customer engagement.</p>
+                  <h3>Vending<span> Machine</span></h3>
+                  <p>A web-based vending machine simulator that allows users to select items and make virtual purchases.</p>
+                 <h3>Petrol<span> Calculator</span></h3>
+                  <p>A web application that helps users calculate fuel consumption and costs based on distance traveled and fuel efficiency.</p>
+  
+            </div>
+            
+            </div>
+        </div>
+        <div class="cursor"></div>
+        </section>
+        <style>
+            p {
+      color: #ffffff;
+      margin-top: 0;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    p:hover {
+      transform: scale(1.2);
+    }
+    body, html {
+  overflow: hidden;
+}
+    .cursor {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 999 ;
+    border: 3px solid #d92525;
+    transition: all 0.2s ease-out;
+    animation: moveCursor1 .5s infinite alternate;
+    box-shadow: 0 0  20px #ad2222,
+                0 0  60px #7d0202,
+                0 0  100px#540607;
+}
+
+.cursor:before{
+    content: '';
+    position: absolute;
+    background:#ec2a57;
+    width: 40px;
+    height: 40px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+}
+
+
+@keyframes moveCursor1 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.8);
+    }
+}
+
+@keyframes moveCursor2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+    </style>
+    <script>
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+    });
+    
+    document.addEventListener('click', e => {
+        cursor.classList.add("expand");
+        setTimeout(() => {
+            cursor.classList.remove("expand");
+        }, 500);
+    });</script>
+    
+        </style>
+        
+        
+</body>
+</html>

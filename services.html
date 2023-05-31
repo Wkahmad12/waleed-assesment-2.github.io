@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="pp.js"></script>
+    <link rel="stylesheet" href="pp.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORT<span>FOLIO</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="services.html">SERVICES</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="skill.html">SKILLS</a>
+            <a href="contact.html">CONTACT</a>
+            
+         
+        </nav>
+    </header>
+    <section class="SERVICES" id="SERVICES">
+        <h2 class="headingg">Our <span>Services</span></h2>
+        <div class="service-tt">
+            <div class="service-box">
+            <i class='bx bx-code-alt' ></i>
+            <h3>Web development</h3>
+            <p class="p3">At our company, we offer a range of web development services to help businesses create, maintain, and improve their online presence. Our team of experienced developers uses the latest technologies and industry best practices to build websites that are user-friendly, responsive, and secure. We work closely with our clients to understand their business goals and tailor our services to meet their specific needs.</p>
+            </div>
+        
+        <div class="service-box">
+            <i class='bx bxs-paint'></i>
+            <h3>Graphic design</h3>
+            <p class="p3">Our company also provides top-notch graphic design services to help businesses create stunning visual content that communicates their brand message effectively. Our team of experienced designers uses the latest design tools and techniques to create unique and compelling designs that stand out from the competition.</p>
+        </div>
+        <div class="service-box">
+            <i class='bx bx-laptop'></i>
+                <h3>UX design</h3>
+                <p class="p3">Our UX design services are designed to help businesses create intuitive, user-friendly digital products that provide a seamless user experience. Our team of experienced designers follows a user-centric approach to design and develops solutions that meet the unique needs of our clients' target audiences.</p>
+         </div>
+        </div>
+        
+    </section>
+    <div class="cursor"></div>
+    <style>
+    .cursor {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+        border-radius: 50%;
+        background: transparent;
+        pointer-events: none;
+        z-index: 999 ;
+        border: 3px solid #d92525;
+        transition: all 0.2s ease-out;
+        animation: moveCursor1 .5s infinite alternate;
+        box-shadow: 0 0  20px #ad2222,
+                    0 0  60px #7d0202,
+                    0 0  100px#540607;
+    }
+    
+    .cursor:before{
+        content: '';
+        position: absolute;
+        background:#ec2a57;
+        width: 40px;
+        height: 40px;
+        opacity: 0.2;
+        transform: translate(-30%, -30%);
+        border-radius: 50%;
+    }
+    
+    
+    @keyframes moveCursor1 {
+        from {
+            transform: scale(1);
+        }
+    
+        to {
+            transform: scale(.8);
+        }
+    }
+    
+    @keyframes moveCursor2 {
+        0% {
+            transform: scale(1);
+        }
+    
+        50% {
+            transform: scale(2);
+        }
+    
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+        </style>
+        <script>
+        const cursor = document.querySelector('.cursor');
+    
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+        });
+        
+        document.addEventListener('click', e => {
+            cursor.classList.add("expand");
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500);
+        });</script>
+</body>
+</html>

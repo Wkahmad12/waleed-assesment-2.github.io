@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="pp.js"></script>
+    <link rel="stylesheet" href="pp.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORT<span>FOLIO</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="services.html">SERVICES</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="skill.html">SKILLS</a>
+            <a href="contact.html">CONTACT</a>
+            
+          
+        </nav>
+    </header>
+    <section class="about" id="about">
+        <div class="about-pic">
+       <img src="WhatsApp Image 2023-04-27 at 13.57.00.jpg" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="headingg">About <span>Me</span></h2>
+            <h3>Frontend <span> Developer! </span></h3>
+            <p class="p1" >Hi, my name is Waleed Khan and I'm a 19-year-old web designer and developer from Pakistan. I completed my 12th grade in 2022 and have been pursuing my passion for web design and development ever since. As a freelancer, I have worked on several web design projects and have gained valuable experience in creating responsive and user-friendly websites.
+
+                In addition to web design and development, I have also worked in data entry and have a strong attention to detail. I am always eager to learn new skills and technologies, and I believe that my passion for web design and development, coupled with my work experience, make me a valuable asset to any team.
+                
+                Thank you for taking the time to get to know me, and I look forward to working with you in the future.</p>
+        </div>
+        <a href="certificate.html" target="_blank" class="btn2">Read More</a>
+        <div class="cursor"></div>
+    </section>
+    <style>
+        
+    .cursor {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+        border-radius: 50%;
+        background: transparent;
+        pointer-events: none;
+        z-index: 999 ;
+        border: 3px solid #d92525;
+        transition: all 0.2s ease-out;
+        animation: moveCursor1 .5s infinite alternate;
+        box-shadow: 0 0  20px #ad2222,
+                    0 0  60px #7d0202,
+                    0 0  100px#540607;
+    }
+    
+    .cursor:before{
+        content: '';
+        position: absolute;
+        background:#ec2a57;
+        width: 40px;
+        height: 40px;
+        opacity: 0.2;
+        transform: translate(-30%, -30%);
+        border-radius: 50%;
+    }
+    body, html {
+  overflow: hidden;
+}
+    
+    
+    @keyframes moveCursor1 {
+        from {
+            transform: scale(1);
+        }
+    
+        to {
+            transform: scale(.8);
+        }
+    }
+    
+    @keyframes moveCursor2 {
+        0% {
+            transform: scale(1);
+        }
+    
+        50% {
+            transform: scale(2);
+        }
+    
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+        </style>
+        <script>
+        const cursor = document.querySelector('.cursor');
+    
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+        });
+        
+        document.addEventListener('click', e => {
+            cursor.classList.add("expand");
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500);
+        });</script>
+    
+</body>
+</html>
